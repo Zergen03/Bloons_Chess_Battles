@@ -9,14 +9,14 @@ var idActual;
 var piezaGlobal;
 var casillaOriginal;
 var comerIzquierda;
-var comerDerecha
+var comerDerecha;
 var celdaAdelante;
 var celdaDoblePeon;
 var piezaDeseleccion;
 var turnoBlancas= true;
 var colorPieza;
-var enroqueBlc = false
-var enroqueNgr = false
+var enroqueBlc = false;
+var enroqueNgr = false;
 var piezasN = [
     "./Imagenes/Ajedrez/torreN.png",
     "./Imagenes/Ajedrez/caballoN.png",

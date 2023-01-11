@@ -10,27 +10,27 @@
     <script language="JavaScript">
         //Cambiar cursor con el click
         document.addEventListener("mousedown", () => {
-            cambiarCursor(true)
+            cambiarCursor(true);
         })
         document.addEventListener("mouseup", () => {
-            cambiarCursor(false)
+            cambiarCursor(false);
         })
         function cambiarCursor(cierto) {
             if (cierto) {
-                document.getElementById("documento").classList.remove("cursorSinPulsar")
-                document.getElementById("documento").classList.add("cursorPulsado")
+                document.getElementById("documento").classList.remove("cursorSinPulsar");
+                document.getElementById("documento").classList.add("cursorPulsado");
             }
             else if (!cierto) {
-                document.getElementById("documento").classList.remove("cursorPulsado")
-                document.getElementById("documento").classList.add("cursorSinPulsar")
+                document.getElementById("documento").classList.remove("cursorPulsado");
+                document.getElementById("documento").classList.add("cursorSinPulsar");
             }
 
         }
-        
+
         function pulsar(boton) {
-            boton.src = './juego/Imagenes/Titulo/botonPlayPulsado.png'
+            boton.src = './juego/Imagenes/Titulo/botonPlayPulsado.png';
             onmouseup = function soltar() {
-                boton.src = './juego/Imagenes/Titulo/botonPlay.png'
+                boton.src = './juego/Imagenes/Titulo/botonPlay.png';
                 window.location.href = "./juego/ajedrez.html";
             }
         }

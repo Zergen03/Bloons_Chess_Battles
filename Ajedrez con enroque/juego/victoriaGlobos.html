@@ -8,22 +8,20 @@
     <link rel='stylesheet' type='text/css' media='screen' href='./css/cursor.css'>
     <script>
          document.addEventListener("mousedown", () => {
-            cambiarCursor(true)
+            cambiarCursor(true);
         })
         document.addEventListener("mouseup", () => {
-            cambiarCursor(false)
+            cambiarCursor(false);
         })
 
         function cambiarCursor(cierto) {
             if (cierto) {
-                console.log("hola")
-                document.getElementById("documento").classList.remove("cursorSinPulsar")
-                document.getElementById("documento").classList.add("cursorPulsado")
+                document.getElementById("documento").classList.remove("cursorSinPulsar");
+                document.getElementById("documento").classList.add("cursorPulsado");
             }
             else if (!cierto) {
-                document.getElementById("documento").classList.remove("cursorPulsado")
-                document.getElementById("documento").classList.add("cursorSinPulsar")
-                console.log("adios")
+                document.getElementById("documento").classList.remove("cursorPulsado");
+                document.getElementById("documento").classList.add("cursorSinPulsar");
             }
 
         }
