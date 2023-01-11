@@ -1,0 +1,39 @@
+
+table {
+    margin: auto; 
+    background: black; 
+    border-collapse: collapse;          /*quitar espacio entre celdas*/
+}
+td {
+    width: 100px; height: 100px; 
+    /* background-color: green; */
+    background-image: url("../Imagenes/Ajedrez/hierba.png"); 
+    text-align: center; 
+}
+
+tr:nth-child(odd) td:nth-child(odd), 
+tr:nth-child(even) td:nth-child(even) {
+    /* background-color: blue; */
+background-image: url("../Imagenes/Ajedrez/piedra.png"); 
+}  
+
+
+.celdaMovimientoPiedra{
+    background-image: url("../Imagenes/Ajedrez/caballoB.png");
+}
+.celdaMovimientoHierba{
+    background-image: url("../Imagenes/Ajedrez/caballoN.png");
+}
+
+.cursorSinPulsar{
+    cursor: url("../Imagenes/Ajedrez/cursorStand.cur"),auto;
+}
+.cursorPulsado{
+  cursor: url("../Imagenes/Ajedrez/cursorClick.cur"),auto;
+}
+.cruces{
+    position: absolute;
+    width: 96px;
+    margin-left:-85px ;
+    margin-top: -9px;
+}

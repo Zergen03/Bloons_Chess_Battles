@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html class="cursorSinPulsar" id="documento">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Menu Principal</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./juego/css/menu.css'>
+    <script language="JavaScript">
+        //Cambiar cursor con el click
+        document.addEventListener("mousedown", () => {
+            cambiarCursor(true);
+        })
+        document.addEventListener("mouseup", () => {
+            cambiarCursor(false);
+        })
+        function cambiarCursor(cierto) {
+            if (cierto) {
+                document.getElementById("documento").classList.remove("cursorSinPulsar");
+                document.getElementById("documento").classList.add("cursorPulsado");
+            }
+            else if (!cierto) {
+                document.getElementById("documento").classList.remove("cursorPulsado");
+                document.getElementById("documento").classList.add("cursorSinPulsar");
+            }
+
+        }
+
+        function pulsar(boton) {
+            boton.src = './juego/Imagenes/Titulo/botonPlayPulsado.png';
+            onmouseup = function soltar() {
+                boton.src = './juego/Imagenes/Titulo/botonPlay.png';
+                window.location.href = "./juego/ajedrez.html";
+            }
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <div class="boton">
+        <img id="botonPlay" src="./juego/Imagenes/Titulo/botonPlay.png" onmousedown="pulsar(this)">
+        <img id="botonPlayPulsado" src="./juego/Imagenes/Titulo/botonPlayPulsado.png" style="display: none;">
+    </div>
+</body>
+
+</html>
