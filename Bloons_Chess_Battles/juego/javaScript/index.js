@@ -71,27 +71,27 @@ function cogerPieza(pieza) {
             }
 
             if (pieza.id.includes("alfilBlc")) {
-                moverAlfil(pieza.parentNode, true);
+                moverAlfil(pieza.parentNode);
                 pieza.setAttribute("onclick", "movimientoPiezaAlfil(false)");
             }
             if (pieza.id.includes("caballoBlc")) {
-                moverCaballo(pieza.parentNode, true);
+                moverCaballo(pieza.parentNode);
                 pieza.setAttribute("onclick", "movimientoPiezaCaballo(false)");
             }
             if (pieza.id.includes("peonBlc")) {
-                moverPeon(pieza.parentNode, true);
+                moverPeon(pieza.parentNode);
                 pieza.setAttribute("onclick", "movimientoPiezaPeon(false)");
             }
             if (pieza.id.includes("reinaBlc")) {
-                moverReina(pieza.parentNode, true);
+                moverReina(pieza.parentNode);
                 pieza.setAttribute("onclick", "movimientoPiezaReina(false)");
             }
             if (pieza.id.includes("reyBlc")) {
-                moverRey(pieza.parentNode, true);
+                moverRey(pieza.parentNode);
                 pieza.setAttribute("onclick", "movimientoPiezaRey(false)");
             }
             if (pieza.id.includes("torreBlc")) {
-                moverTorre(pieza.parentNode, true);
+                moverTorre(pieza.parentNode);
                 pieza.setAttribute("onclick", "movimientoPiezaTorre(false)");
             }
         }
@@ -106,27 +106,27 @@ function cogerPieza(pieza) {
             }
 
             if (pieza.id.includes("alfilNgr")) {
-                moverAlfil(pieza.parentNode, false);
+                moverAlfil(pieza.parentNode);
                 pieza.setAttribute("onclick", "movimientoPiezaAlfil(false)")
             }
             if (pieza.id.includes("caballoNgr")) {
-                moverCaballo(pieza.parentNode, false);
+                moverCaballo(pieza.parentNode);
                 pieza.setAttribute("onclick", "movimientoPiezaCaballo(false)")
             }
             if (pieza.id.includes("peonNgr")) {
-                moverPeon(pieza.parentNode, false);
+                moverPeon(pieza.parentNode);
                 pieza.setAttribute("onclick", "movimientoPiezaPeon(false)")
             }
             if (pieza.id.includes("reinaNgr")) {
-                moverReina(pieza.parentNode, false);
+                moverReina(pieza.parentNode);
                 pieza.setAttribute("onclick", "movimientoPiezaReina(false)")
             }
             if (pieza.id.includes("reyNgr")) {
-                moverRey(pieza.parentNode, false);
+                moverRey(pieza.parentNode);
                 pieza.setAttribute("onclick", "movimientoPiezaRey(false)")
             }
             if (pieza.id.includes("torreNgr")) {
-                moverTorre(pieza.parentNode, false);
+                moverTorre(pieza.parentNode);
                 pieza.setAttribute("onclick", "movimientoPiezaTorre(false)")
             }
         }
@@ -140,7 +140,7 @@ function cogerPieza(pieza) {
 var numeroCruz = 1
 function marcarCelda(celda, marcarEnroque) {
     if (celda.hasChildNodes()) {
-        celda.innerHTML += "<img src= './Imagenes/Ajedrez/cruceta.png' class='cruces' id='cruz" + numeroCruz + "'>";
+        celda.innerHTML += "<img src= './Imagenes/Ajedrez/cruceta.png' class='cruces' id='cruzRoja" + numeroCruz + "'>";
         numeroCruz++;
         if (marcarEnroque) {
             celda.innerHTML += "<img src= './Imagenes/Ajedrez/crucetaAzul.png' class='cruces' id='cruzAzul" + numeroCruz + "'>";

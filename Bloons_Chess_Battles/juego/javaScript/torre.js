@@ -1,7 +1,6 @@
-function moverTorre(torre, colorTorre) {
+function moverTorre(torre) {
     //identificar direcciones
     casillaOriginal = torre.id;
-    colorPieza= colorTorre;
 
     var posicion = [torre.id[0], torre.id[2]];
     let arriba = posicion[0];
@@ -239,5 +238,10 @@ function movimientoPiezaTorre(seleccionar) {
     }
     else{
         enroqueNgr = true;
+    }
+    if(this.childNodes[0].id.includes("Blc")){
+        comprobarJaque("Blc");
+    }else{
+        comprobarJaque("Ngr");
     }
 }

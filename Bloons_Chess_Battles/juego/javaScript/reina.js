@@ -1,7 +1,6 @@
-function moverReina(reina, colorReina) {
+function moverReina(reina) {
     //identificar direcciones
     casillaOriginal = reina.id;
-    colorPieza= colorReina;
 
     var posicion = [reina.id[0], reina.id[2]];
     let arriba = posicion[0];
@@ -494,4 +493,9 @@ function movimientoPiezaReina(seleccionar) {
     }
     this.innerHTML = "<img src =" + piezaGlobal.src + " width=" + piezaGlobal.width + " onclick= 'cogerPieza(this)' id=" + piezaGlobal.id + " style='position: relative;'>";
     moviendo = false;
+    if(this.childNodes[0].id.includes("Blc")){
+        comprobarJaque("Blc");
+    }else{
+        comprobarJaque("Ngr");
+    }
 }

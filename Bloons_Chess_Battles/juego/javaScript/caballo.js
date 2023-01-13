@@ -1,7 +1,6 @@
-function moverCaballo(caballo, colorCaballo) {
+function moverCaballo(caballo) {
     //identificar direcciones
     casillaOriginal = caballo.id;
-    colorPieza= colorCaballo;
 
     var posicion = [caballo.id[0], caballo.id[2]];
     let arriba = posicion[0];
@@ -186,4 +185,9 @@ function movimientoPiezaCaballo(seleccionar) {
     }
     this.innerHTML = "<img src =" + piezaGlobal.src + " width=" + piezaGlobal.width + " onclick= 'cogerPieza(this)' id=" + piezaGlobal.id + " style='position: relative;'>";
     moviendo = false;
+    if(this.childNodes[0].id.includes("Blc")){
+        comprobarJaque("Blc");
+    }else{
+        comprobarJaque("Ngr");
+    }
 }

@@ -287,3 +287,82 @@ function movimientoPiezaRey(seleccionar) {
     }
     moviendo = false;
 }
+
+
+function comprobarJaque(colorPieza) {
+    var colorEnemigo;
+    if (colorPieza == "Blc") {
+        colorEnemigo = "Ngr";
+    } else {
+        colorEnemigo = "Blc";
+    }
+    var casillaReyEnemigo = buscarReyEnemigo(colorEnemigo);
+    //poner cruces de todos los movimientos posibles
+    for (fila = 0; fila < 8; fila++) {
+        for (columna = 0; columna < 8; columna++) {
+            if (document.getElementById(fila + "-" + columna).hasChildNodes()) {
+                if (document.getElementById(fila + "-" + columna).childNodes[0].id.includes(colorPieza)) {
+                    if (document.getElementById(fila + "-" + columna).childNodes[0].id.includes("alfil")) {
+                        moverAlfil(document.getElementById(fila + "-" + columna));
+                    } else if (document.getElementById(fila + "-" + columna).childNodes[0].id.includes("caballo")) {
+                        moverCaballo(document.getElementById(fila + "-" + columna));
+                    } else if (document.getElementById(fila + "-" + columna).childNodes[0].id.includes("peon")) {
+                        moverPeon(document.getElementById(fila + "-" + columna));
+                    } else if (document.getElementById(fila + "-" + columna).childNodes[0].id.includes("reina")) {
+                        moverReina(document.getElementById(fila + "-" + columna));
+                    } else if (document.getElementById(fila + "-" + columna).childNodes[0].id.includes("rey")) {
+                        moverRey(document.getElementById(fila + "-" + columna));
+                    } else if (document.getElementById(fila + "-" + columna).childNodes[0].id.includes("torre")) {
+                        moverTorre(document.getElementById(fila + "-" + columna));
+                    }
+                }
+            }
+        }
+    }
+            for (i = 0; i < document.getElementById(casillaReyEnemigo).childNodes.length; i++) {
+                if (document.getElementById(casillaReyEnemigo).childNodes[i].id.includes("cruz")) {
+                    alert("jaque");
+                }
+            }
+            let cruces = document.querySelectorAll("img");
+            let idCruces = new Array();
+            for (i = 0; i < cruces.length; i++) {
+                if (cruces[i].id.includes("cruz")) {
+                    document.getElementById(cruces[i].id).parentNode.removeEventListener("click", movimientoPiezaAlfil);
+                    document.getElementById(cruces[i].id).parentNode.removeEventListener("click", movimientoPiezaCaballo);
+                    document.getElementById(cruces[i].id).parentNode.removeEventListener("click", movimientoPiezaPeon);
+                    document.getElementById(cruces[i].id).parentNode.removeEventListener("click", movimientoPiezaReina);
+                    document.getElementById(cruces[i].id).parentNode.removeEventListener("click", movimientoPiezaTorre);
+                    document.getElementById(cruces[i].id).parentNode.removeEventListener("click", movimientoPiezaRey);
+                    document.getElementById(cruces[i].id).remove();
+                }
+            }
+
+
+
+
+    // if (document.getElementById(casillaReyEnemigo.childNodes.includes("cruzRoja"))) {
+    // }
+}
+
+
+
+function buscarReyEnemigo(colorEnemigo) {
+
+    for (fila = 0; fila < 8; fila++) {
+        for (columna = 0; columna < 8; columna++) {
+            var casilla = document.getElementById(fila + "-" + columna);
+            var idCasilla = (fila + "-" + columna);
+            if(casilla.hasChildNodes()){
+               if (casilla.childNodes[0].id.includes("rey" + colorEnemigo)) {
+                return idCasilla;
+            }
+            }
+        }
+    }
+    if(this.childNodes[0].id.includes("Blc")){
+        comprobarJaque("Blc");
+    }else{
+        comprobarJaque("Ngr");
+    }
+}

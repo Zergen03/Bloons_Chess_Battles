@@ -14,7 +14,6 @@ var celdaAdelante;
 var celdaDoblePeon;
 var piezaDeseleccion;
 var turnoBlancas= true;
-var colorPieza;
 var enroqueBlc = false;
 var enroqueNgr = false;
 var piezasN = [

@@ -1,12 +1,16 @@
-function moverPeon(peon, colorPeon) {
+function moverPeon(peon) {
 
     //convierte la id de la casilla donde esta el peon en un principio en variable gloval
     casillaOriginal = peon.id;
-    //convertimos a variable global el color de la pieza
-    colorPieza = colorPeon;
     //la posicion del peon
     var posicion = [peon.id[0], peon.id[2]];
     //Seleccionar la celda de delante dependiendo del color del peon
+    var colorPeon;
+    if(peon.childNodes[0].id.includes("Blc")){
+        colorPeon = true;
+    }else{
+        colorPeon = false
+    }
     if (colorPeon) {
         posicion[0]--;
         var idCelda = posicion[0] + "-" + posicion[1];
@@ -157,5 +161,10 @@ function movimientoPiezaPeon(seleccionar) {
     if (celdaDoblePeon != "") {
         document.getElementById(celdaDoblePeon).removeEventListener("click", movimientoPiezaPeon);
         celdaDoblePeon = "";
+    }
+    if(this.childNodes[0].id.includes("Blc")){
+        comprobarJaque("Blc");
+    }else{
+        comprobarJaque("Ngr");
     }
 }
